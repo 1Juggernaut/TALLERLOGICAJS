@@ -197,3 +197,38 @@ menusuario.forEach((plato) => {
   preciototal = preciototal + plato.precio;
   console.log(preciototal);
 });
+
+// Punto 5 ^_^
+
+let formpt5 = document.querySelector("#formpt5");
+
+formpt5.addEventListener("submit", (even5) => {
+  even5.preventDefault();
+  let inputp5 = document.querySelector("#Numeropt5").value;
+  console.log(inputp5);
+  if (isNaN(inputp5) || inputp5 == 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Verifica los datos ingresados",
+      text: " Solo números, y no funciona el 0.(Todo dará 0😒) ",
+    });
+  } else {
+    let totalmult = 0;
+    // array donde se guardara la sumatoria demultiplicacion
+
+    let tablamult = "";
+    // texto donde se guardara cada iteracion con su respectiva multiplicacion
+
+    for (let i = 1; i < 11; i++) {
+      let result = inputp5 * i;
+      tablamult += `${inputp5} x ${i} = ${result} <br>`;
+      totalmult += result;
+    }
+    let resultado5 = document.querySelector("#resultadonumero5");
+    resultado5.innerHTML = `
+    <p>Tabla de multiplicar de ${inputp5}:<br> ${tablamult}<br> Total multiplicacion: ${totalmult}.</p>`;
+    console.log(totalmult);
+  }
+});
+
+// PUNTO 6 :D
