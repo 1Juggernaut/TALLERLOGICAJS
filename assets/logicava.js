@@ -232,3 +232,57 @@ formpt5.addEventListener("submit", (even5) => {
 });
 
 // PUNTO 6 :D
+let valormat = 1000000;
+let fomrpt6 = document.querySelector("#formpt6");
+
+fomrpt6.addEventListener("submit", (prt6) => {
+  prt6.preventDefault();
+  let valorpt6 = document.querySelector("#Numeropt6").value;
+  if (valorpt6 < 11 && valorpt6 > 0) {
+    if (valorpt6 > 4) {
+      let halfdescuento = (valormat * 50) / 100;
+      let matricula1 = valormat - halfdescuento;
+      Swal.fire({
+        title: "¡Felicidades, aplicas para descuento del 50% !.",
+        // text: `Total a pagar: $${matricula1}` si se quiere el valor sin puntos,
+        text: `Total a pagar: $${matricula1}, o $500.000 😒`,
+        imageUrl:
+          "https://media0.giphy.com/media/CC12bXfpwxyz5kRkmn/giphy.gif?cid=ecf05e47fl0ayimt3racp1mgmt364h3qi7tht28eyy7t6g09&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+        imageWidth: 400,
+        imageHeight: 270,
+        imageAlt: "Custom image",
+      });
+    } else if (valorpt6 >= 3 && valorpt6 <= 4) {
+      let fivpersent = (valormat * 5) / 100;
+      let matricula2 = valormat - fivpersent;
+      console.log(matricula2);
+      Swal.fire({
+        title: "¡Felicidades, aplicas para descuento del 5% !",
+        // text: `Total a pagar: $${matricula1}` si se quiere el valor sin puntos,
+        text: `Total a pagar: $${matricula2}, o $950.000 😒`,
+        imageUrl: "https://i.giphy.com/media/dlkS9a5h2usyZ3UJRn/giphy.webp",
+        imageWidth: 340,
+        imageHeight: 360,
+        imageAlt: "Custom image",
+      });
+    } else {
+      Swal.fire({
+        title: "Que lástima, no recibes descuento.",
+        imageUrl:
+          "https://media4.giphy.com/media/ISOckXUybVfQ4/giphy.gif?cid=ecf05e47qg6s763816q5fbyc7lm0n0y9bbryrp6dhekdp0mh&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        text: "☹️",
+      });
+    }
+  } else {
+    {
+      Swal.fire({
+        icon: "error",
+        title: "Verifica el valor ingresado.",
+        text: "Recuerda, el promedio es un valor de 0 a 10. 😉",
+      });
+    }
+  }
+});
