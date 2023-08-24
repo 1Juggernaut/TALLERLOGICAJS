@@ -164,9 +164,10 @@ frmpt4.addEventListener("submit", (evn) => {
     console.log("file: logicava.js:163 plato.precio:", preciototal);
     let divproductos = document.querySelector("#listproductospt4");
 
-    divproductos.innerHTML += `
+    divproductos.innerHTML = `
     Los productos seleccionados son: `;
-
+    let Listausuario = document.querySelector("#Listausuario");
+    Listausuario.innerHTML = "";
     let totalpago = document.querySelector("#resultpt4");
 
     for (
@@ -176,7 +177,7 @@ frmpt4.addEventListener("submit", (evn) => {
     ) {
       let Listausuario = document.querySelector("#Listausuario");
       Listausuario.innerHTML += `
-      <li> ${Menucomida[grillausuario].nombre}</li>`;
+      <li> ${menusuario[grillausuario].nombre}</li>`;
     }
     totalpago.innerHTML += ` El total es ${preciototal}`;
   } else if (filtrar.length == 0) {
@@ -188,6 +189,14 @@ frmpt4.addEventListener("submit", (evn) => {
   } else {
     menusuario.push(filtrar[0]);
     console.log(menusuario);
+    let divproductos = document.querySelector("#listproductospt4");
+
+    divproductos.innerHTML = `
+    Los productos seleccionados son: `;
+
+    let Listausuario = document.querySelector("#Listausuario");
+    Listausuario.innerHTML += `
+      <li>${menusuario[menusuario.length - 1].nombre} </li>`;
   }
 });
 
