@@ -5,12 +5,10 @@ formulariopt1.addEventListener("submit", (Eventopt1) => {
   let Npt1 = document.querySelector("#Numero1").value;
   let suma = 0;
   for (let i = 1; i <= Npt1; i++) {
-    suma += i;
+    suma = suma + i;
   }
   // si se quiere poner un alert
   // alert("Su suma es " + suma)
-
-  let textpt1 = document.querySelector("#resultpt1");
 
   Swal.fire({
     title: "¡El resultado es " + suma + " !",
@@ -58,7 +56,7 @@ formpt3.addEventListener("submit", (eregalo) => {
   let edad = eregalo.target.edadpt3.value;
   let gender = eregalo.target.genderpt3.value;
 
-  if (edad < 10) {
+  if (edad <= 10) {
     if (gender == "Hombre" || gender == "hombre") {
       Swal.fire({
         title: "Te ganaste un jugo y una pizza de tres carnes!",
@@ -86,7 +84,7 @@ formpt3.addEventListener("submit", (eregalo) => {
     }
   }
 
-  if (edad > 18) {
+  if (edad >= 18) {
     if (gender == "Hombre" || gender == "hombre") {
       Swal.fire({
         title: "Te ganaste una pola y una pizza de tres carnes!",
@@ -113,7 +111,7 @@ formpt3.addEventListener("submit", (eregalo) => {
       });
     }
   }
-  if (edad > 9 && edad <= 18) {
+  if (edad > 10 && edad < 18) {
     Swal.fire({
       icon: "error",
       title: "Que lástima, no recibes premio.",
@@ -247,7 +245,7 @@ let fomrpt6 = document.querySelector("#formpt6");
 fomrpt6.addEventListener("submit", (prt6) => {
   prt6.preventDefault();
   let valorpt6 = document.querySelector("#Numeropt6").value;
-  if (valorpt6 < 11 && valorpt6 > 0) {
+  if (valorpt6 < 10.1 && valorpt6 > 0) {
     if (valorpt6 > 4) {
       let halfdescuento = (valormat * 50) / 100;
       let matricula1 = valormat - halfdescuento;
