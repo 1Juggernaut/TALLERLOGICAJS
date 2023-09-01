@@ -120,6 +120,9 @@ formpt3.addEventListener("submit", (eregalo) => {
   }
 });
 
+// en este commit se cambió los valores de menor igual y mayor igual, ignorarlo ya que se encontró el error despues de la fecha de entrega
+// valores en menor o igual a 10 y mayor igual a 18.
+
 // Punto 4 :)
 
 let menusuario = [];
@@ -177,7 +180,7 @@ frmpt4.addEventListener("submit", (evn) => {
       Listausuario.innerHTML += `
       <li> ${menusuario[grillausuario].nombre}</li>`;
     }
-    totalpago.innerHTML += ` El total es ${preciototal}`;
+    totalpago.innerHTML = ` El total es ${preciototal}`;
   } else if (filtrar.length == 0) {
     Swal.fire({
       icon: "error",
@@ -212,7 +215,6 @@ let formpt5 = document.querySelector("#formpt5");
 formpt5.addEventListener("submit", (even5) => {
   even5.preventDefault();
   let inputp5 = document.querySelector("#Numeropt5").value;
-  console.log(inputp5);
   if (isNaN(inputp5) || inputp5 == 0) {
     Swal.fire({
       icon: "error",
